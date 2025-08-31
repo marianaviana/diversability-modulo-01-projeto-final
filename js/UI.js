@@ -77,7 +77,7 @@ class UI {
                   <h3>Mariana Viana</h3>
                   <h4>Id Ada: 1433002</h4>
                 </div>
-                <img src="/images/mariana-viana-foto-profissional.png" alt="Mariana Viana" title="Mariana Viana">
+                <img src="https://mariviana.dev/diversability-modulo-01-projeto-final/images/mariana-viana-foto-profissional.png" alt="Mariana Viana" title="Mariana Viana">
               </div>
             </div>
           </li>
