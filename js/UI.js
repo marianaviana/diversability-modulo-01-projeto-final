@@ -11,7 +11,7 @@ class UI {
     const cleanUrl = url.trim();
 
     return (
-      cleanUrl === '/images/marvel.png' ||
+      cleanUrl === 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/marvel.png' ||
       cleanUrl.startsWith('/images/') ||
       cleanUrl.startsWith('http://') ||
       cleanUrl.startsWith('https://') ||
@@ -35,13 +35,13 @@ class UI {
     setTimeout(() => {
       const images = document.querySelectorAll('img.card-img');
       images.forEach(img => {
-        if (img.src && img.src !== '/images/marvel.png' && !img.complete) {
+        if (img.src && img.src !== 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/marvel.png' && !img.complete) {
           const newImg = new Image();
           newImg.onload = function() {
             img.src = this.src;
           };
           newImg.onerror = function() {
-            img.src = '/images/marvel.png';
+            img.src = 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/marvel.png';
           };
           newImg.src = img.src;
         }
@@ -55,9 +55,9 @@ class UI {
 
     header.innerHTML = `
       <div class="logo-container">
-        <img src="/images/ada-tech-logo.webp" alt="Logo MCU 1" class="side-logo">
-        <img src="/images/cognizant-logo-white.webp" alt="Logo Principal MCU" class="main-logo">
-        <img src="/images/marvel.png" alt="Logo MCU 2" class="side-logo">
+        <img src="https://mariviana.dev/diversability-modulo-01-projeto-final/images/ada-tech-logo.webp" alt="Logo MCU 1" class="side-logo">
+        <img src="https://mariviana.dev/diversability-modulo-01-projeto-final/images/cognizant-logo-white.webp" alt="Logo Principal MCU" class="main-logo">
+        <img src="https://mariviana.dev/diversability-modulo-01-projeto-final/images/marvel.png" alt="Logo MCU 2" class="side-logo">
       </div>
       <nav>
         <ul>
@@ -312,7 +312,7 @@ class UI {
     }
 
     container.innerHTML = moviesToRender.map(movie => {
-      const imageUrl = this.isValidImageUrl(movie.imgLink) ? movie.imgLink : '/images/marvel.png';
+      const imageUrl = this.isValidImageUrl(movie.imgLink) ? movie.imgLink : 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/marvel.png';
 
       return `
       <div class="movie-card" data-id="${movie.id}">
@@ -320,7 +320,7 @@ class UI {
           <img src="${imageUrl}"
             alt="${movie.title}"
             class="card-img"
-            onerror="this.src='/images/marvel.png'"
+            onerror="this.src='https://mariviana.dev/diversability-modulo-01-projeto-final/images/marvel.png'"
           />
         </div>
         <div class="card-body">
@@ -368,10 +368,10 @@ class UI {
         ${results.map(movie => {
           const hasValidImage = movie.imgLink &&
                               (movie.imgLink.startsWith('http') ||
-                                movie.imgLink.startsWith('/images/') ||
+                                movie.imgLink.startsWith('https://mariviana.dev/diversability-modulo-01-projeto-final/images/') ||
                                 movie.imgLink.startsWith('data:image'));
 
-          const imageUrl = hasValidImage ? movie.imgLink : '/images/marvel.png';
+          const imageUrl = hasValidImage ? movie.imgLink : 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/marvel.png';
 
           return `
           <div class="movie-card">
@@ -379,7 +379,7 @@ class UI {
               <img src="${imageUrl}"
                 alt="${movie.title}"
                 class="card-img"
-                onerror="this.src='/images/marvel.png'"
+                onerror="this.src='https://mariviana.dev/diversability-modulo-01-projeto-final/images/marvel.png'"
               />
             </div>
             <div class="card-body">
