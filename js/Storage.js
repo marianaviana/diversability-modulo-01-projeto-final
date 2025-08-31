@@ -34,7 +34,7 @@ class Storage {
         lancamento: '22/07/2011',
         duracao: 124,
         streaming: true,
-        imgLink: '/images/capitao-america-o-primeiro-vingador.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/capitao-america-o-primeiro-vingador.webp'
       },
       {
         id: 2,
@@ -59,7 +59,7 @@ class Storage {
         lancamento: '06/01/2015',
         duracao: 129600,
         streaming: true,
-        imgLink: '/images/agente-carter.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/agente-carter.webp'
       },
       {
         id: 3,
@@ -70,7 +70,7 @@ class Storage {
         lancamento: '24/07/2025',
         duracao: 115,
         streaming: false,
-        imgLink: '/images/quarteto-fantastico-primeiros-passos.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/quarteto-fantastico-primeiros-passos.webp'
       },
       {
         id: 4,
@@ -81,7 +81,7 @@ class Storage {
         lancamento: '02/05/2008',
         duracao: 126,
         streaming: true,
-        imgLink: '/images/capita-marvel.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/capita-marvel.webp'
       },
       {
         id: 5,
@@ -92,7 +92,7 @@ class Storage {
         lancamento: '15/02/2024',
         duracao: 116,
         streaming: true,
-        imgLink: '/images/madame-teia.png'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/madame-teia.png'
       },
       {
         id: 6,
@@ -103,7 +103,7 @@ class Storage {
         lancamento: '13/06/2008',
         duracao: 112,
         streaming: true,
-        imgLink: '/images/o-incrivel-hulk.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/o-incrivel-hulk.webp'
       },
       {
         id: 7,
@@ -114,7 +114,7 @@ class Storage {
         lancamento: '30/04/2008',
         duracao: 126,
         streaming: true,
-        imgLink: '/images/homem-de-ferro.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/homem-de-ferro.webp'
       },
       {
         id: 8,
@@ -125,7 +125,7 @@ class Storage {
         lancamento: '30/04/2010',
         duracao: 124,
         streaming: true,
-        imgLink: '/images/homem-de-ferro-2.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/homem-de-ferro-2.webp'
       },
       {
         id: 9,
@@ -136,7 +136,7 @@ class Storage {
         lancamento: '13/09/2011',
         duracao: 4,
         streaming: true,
-        imgLink: '/images/o-consultor.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/o-consultor.webp'
       },
       {
         id: 10,
@@ -147,7 +147,7 @@ class Storage {
         lancamento: '25/10/2011',
         duracao: 4,
         streaming: true,
-        imgLink: '/images/aconteceu-uma-coisa-engracada-a-caminho-do-martelo-de-thor.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/aconteceu-uma-coisa-engracada-a-caminho-do-martelo-de-thor.webp'
       },
       {
         id: 11,
@@ -158,7 +158,7 @@ class Storage {
         lancamento: '29/04/2011',
         duracao: 115,
         streaming: true,
-        imgLink: '/images/thor.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/thor.webp'
       },
       {
         id: 12,
@@ -169,7 +169,7 @@ class Storage {
         lancamento: '01/10/2018',
         duracao: 112,
         streaming: true,
-        imgLink: '/images/venom.png'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/venom.png'
       },
       {
         id: 13,
@@ -180,7 +180,7 @@ class Storage {
         lancamento: '01/10/2018',
         duracao: 143,
         streaming: true,
-        imgLink: '/images/os-vingadores.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/os-vingadores.webp'
       },
       {
         id: 14,
@@ -191,7 +191,7 @@ class Storage {
         lancamento: '27/09/2012',
         duracao: 12,
         streaming: true,
-        imgLink: '/images/item-47.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/item-47.webp'
       },
       {
         id: 15,
@@ -202,7 +202,7 @@ class Storage {
         lancamento: '26/04/2013',
         duracao: 130,
         streaming: true,
-        imgLink: '/images/homem-de-ferro-3.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/homem-de-ferro-3.webp'
       },
       {
         id: 16,
@@ -213,7 +213,7 @@ class Storage {
         lancamento: '04/02/2014',
         duracao: 14,
         streaming: true,
-        imgLink: '/images/todos-saudem-o-rei.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/todos-saudem-o-rei.webp'
       },
       {
         id: 17,
@@ -224,7 +224,7 @@ class Storage {
         lancamento: '24/09/2013',
         duracao: 6043,
         streaming: true,
-        imgLink: '/images/shield.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/shield.webp'
       },
       {
         id: 18,
@@ -235,7 +235,7 @@ class Storage {
         lancamento: '24/09/2013',
         duracao: 112,
         streaming: true,
-        imgLink: '/images/thor-o-mundo-sombrio.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/thor-o-mundo-sombrio.webp'
       },
       {
         id: 19,
@@ -246,7 +246,7 @@ class Storage {
         lancamento: '10/04/2014',
         duracao: 136,
         streaming: true,
-        imgLink: '/images/capitao-america-o-soldado-invernal.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/capitao-america-o-soldado-invernal.webp'
       },
       {
         id: 20,
@@ -257,7 +257,7 @@ class Storage {
         lancamento: '31/07/2014',
         duracao: 121,
         streaming: true,
-        imgLink: '/images/guardioes-da-galaxia.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/guardioes-da-galaxia.webp'
       },
       {
         id: 21,
@@ -268,7 +268,7 @@ class Storage {
         lancamento: '10/08/2022',
         duracao: 31,
         streaming: true,
-        imgLink: '/images/eu-sou-groot.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/eu-sou-groot.webp'
       },
       {
         id: 22,
@@ -279,7 +279,7 @@ class Storage {
         lancamento: '27/04/2017',
         duracao: 136,
         streaming: true,
-        imgLink: '/images/guardioes-da-galaxia-vol-2.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/guardioes-da-galaxia-vol-2.webp'
       },
       {
         id: 23,
@@ -290,7 +290,7 @@ class Storage {
         lancamento: '10/04/2015',
         duracao: 2081,
         streaming: true,
-        imgLink: '/images/deredevil.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/deredevil.webp'
       },
       {
         id: 24,
@@ -301,7 +301,7 @@ class Storage {
         lancamento: '10/22/2015',
         duracao: 2041,
         streaming: true,
-        imgLink: '/images/jessica-jones.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/jessica-jones.webp'
       },
       {
         id: 25,
@@ -312,7 +312,7 @@ class Storage {
         lancamento: '23/04/2015',
         duracao: 141,
         streaming: true,
-        imgLink: '/images/vingadores-era-de-ultron.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/vingadores-era-de-ultron.webp'
       },
       {
         id: 26,
@@ -323,7 +323,7 @@ class Storage {
         lancamento: '16/07/2015',
         duracao: 117,
         streaming: true,
-        imgLink: '/images/homem-formiga.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/homem-formiga.webp'
       },
       {
         id: 27,
@@ -334,7 +334,7 @@ class Storage {
         lancamento: '30/09/2016',
         duracao: 1430,
         streaming: true,
-        imgLink: '/images/luke-cage.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/luke-cage.webp'
       },
       {
         id: 28,
@@ -345,7 +345,7 @@ class Storage {
         lancamento: '17/03/2017',
         duracao: 1265,
         streaming: true,
-        imgLink: '/images/punho-de-ferro.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/punho-de-ferro.webp'
       },
       {
         id: 29,
@@ -356,7 +356,7 @@ class Storage {
         lancamento: '28/04/2016',
         duracao: 147,
         streaming: true,
-        imgLink: '/images/capitao-america-guerra-civil.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/capitao-america-guerra-civil.webp'
       },
       {
         id: 30,
@@ -367,7 +367,7 @@ class Storage {
         lancamento: '28/04/2016',
         duracao: 132,
         streaming: true,
-        imgLink: '/images/viuva-negra.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/viuva-negra.webp'
       },
       {
         id: 31,
@@ -378,7 +378,7 @@ class Storage {
         lancamento: '15/02/2018',
         duracao: 134,
         streaming: true,
-        imgLink: '/images/pantera-negra.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/pantera-negra.webp'
       },
       {
         id: 32,
@@ -389,7 +389,7 @@ class Storage {
         lancamento: '18/08/2017',
         duracao: 353,
         streaming: true,
-        imgLink: '/images/os-defensores.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/os-defensores.webp'
       },
       {
         id: 33,
@@ -400,7 +400,7 @@ class Storage {
         lancamento: '06/07/2017',
         duracao: 133,
         streaming: true,
-        imgLink: '/images/homem-aranha-de-volta-ao-lar.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/homem-aranha-de-volta-ao-lar.webp'
       },
       {
         id: 34,
@@ -411,7 +411,7 @@ class Storage {
         lancamento: '29/09/2017',
         duracao: 336,
         streaming: true,
-        imgLink: '/images/inumanos.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/inumanos.webp'
       },
       {
         id: 35,
@@ -422,7 +422,7 @@ class Storage {
         lancamento: '02/11/2016',
         duracao: 115,
         streaming: true,
-        imgLink: '/images/doutor-estranho.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/doutor-estranho.webp'
       },
       {
         id: 36,
@@ -433,7 +433,7 @@ class Storage {
         lancamento: '16/10/2020',
         duracao: 450,
         streaming: true,
-        imgLink: '/images/helstrom.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/helstrom.webp'
       },
       {
         id: 37,
@@ -444,7 +444,7 @@ class Storage {
         lancamento: '26/10/2017',
         duracao: 130,
         streaming: true,
-        imgLink: '/images/thor-ragnarok.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/thor-ragnarok.webp'
       },
       {
         id: 38,
@@ -455,7 +455,7 @@ class Storage {
         lancamento: '17/11/2017',
         duracao: 660,
         streaming: true,
-        imgLink: '/images/justiceiro.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/justiceiro.webp'
       },
       {
         id: 39,
@@ -466,7 +466,7 @@ class Storage {
         lancamento: '21/11/2017',
         duracao: 1830,
         streaming: true,
-        imgLink: '/images/the-runnaways.png'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/the-runnaways.png'
       },
       {
         id: 40,
@@ -477,7 +477,7 @@ class Storage {
         lancamento: '07/06/2018',
         duracao: 1200,
         streaming: true,
-        imgLink: '/images/manto-e-adaga.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/manto-e-adaga.webp'
       },
       {
         id: 41,
@@ -488,7 +488,7 @@ class Storage {
         lancamento: '26/04/2018',
         duracao: 149,
         streaming: true,
-        imgLink: '/images/vingadores-guerra-infinita.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/vingadores-guerra-infinita.webp'
       },
       {
         id: 42,
@@ -499,7 +499,7 @@ class Storage {
         lancamento: '05/07/2018',
         duracao: 118,
         streaming: true,
-        imgLink: '/images/homem-formiga-e-a-vespa.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/homem-formiga-e-a-vespa.webp'
       },
       {
         id: 43,
@@ -510,7 +510,7 @@ class Storage {
         lancamento: '25/04/2019',
         duracao: 181,
         streaming: true,
-        imgLink: '/images/vingadores-ultimato.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/vingadores-ultimato.webp'
       },
       {
         id: 44,
@@ -521,7 +521,7 @@ class Storage {
         lancamento: '09/06/2021',
         duracao: 324,
         streaming: true,
-        imgLink: '/images/loki.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/loki.webp'
       },
       {
         id: 45,
@@ -532,7 +532,7 @@ class Storage {
         lancamento: '11/08/2021',
         duracao: 270,
         streaming: true,
-        imgLink: '/images/what-if.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/what-if.webp'
       },
       {
         id: 46,
@@ -543,7 +543,7 @@ class Storage {
         lancamento: '15/01/2021',
         duracao: 300,
         streaming: true,
-        imgLink: '/images/wandavision.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/wandavision.webp'
       },
       {
         id: 47,
@@ -554,7 +554,7 @@ class Storage {
         lancamento: '19/03/2021',
         duracao: 300,
         streaming: true,
-        imgLink: '/images/falcao-e-soldado-invernal.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/falcao-e-soldado-invernal.webp'
       },
       {
         id: 48,
@@ -565,7 +565,7 @@ class Storage {
         lancamento: '04/07/2019',
         duracao: 129,
         streaming: true,
-        imgLink: '/images/homem-aranha-longe-de-casa.png'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/homem-aranha-longe-de-casa.png'
       },
       {
         id: 49,
@@ -576,7 +576,7 @@ class Storage {
         lancamento: '07/10/2021',
         duracao: 97,
         streaming: true,
-        imgLink: '/images/venom-tempo-de-carnificina.png'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/venom-tempo-de-carnificina.png'
       },
       {
         id: 50,
@@ -587,7 +587,7 @@ class Storage {
         lancamento: '31/03/2022',
         duracao: 104,
         streaming: true,
-        imgLink: '/images/morbius.png'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/morbius.png'
       },
       {
         id: 51,
@@ -598,7 +598,7 @@ class Storage {
         lancamento: '16/12/2021',
         duracao: 148,
         streaming: true,
-        imgLink: '/images/homem-aranha-sem-volta-para-casa.png'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/homem-aranha-sem-volta-para-casa.png'
       },
       {
         id: 52,
@@ -609,7 +609,7 @@ class Storage {
         lancamento: '02/09/2021',
         duracao: 132,
         streaming: true,
-        imgLink: '/images/shang-chi-e-a-lenda-dos-dez-aneis.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/shang-chi-e-a-lenda-dos-dez-aneis.webp'
       },
       {
         id: 53,
@@ -620,7 +620,7 @@ class Storage {
         lancamento: '04/11/2021',
         duracao: 157,
         streaming: true,
-        imgLink: '/images/os-eternos.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/os-eternos.webp'
       },
       {
         id: 54,
@@ -631,7 +631,7 @@ class Storage {
         lancamento: '06/05/2022',
         duracao: 126,
         streaming: true,
-        imgLink: '/images/doutor-estranho-no-multiverso-da-loucura.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/doutor-estranho-no-multiverso-da-loucura.webp'
       },
       {
         id: 55,
@@ -642,7 +642,7 @@ class Storage {
         lancamento: '24/11/2021',
         duracao: 288,
         streaming: true,
-        imgLink: '/images/gaviao-arqueiro.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/gaviao-arqueiro.webp'
       },
       {
         id: 56,
@@ -653,7 +653,7 @@ class Storage {
         lancamento: '09/01/2024',
         duracao: 270,
         streaming: true,
-        imgLink: '/images/echo.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/echo.webp'
       },
       {
         id: 57,
@@ -664,7 +664,7 @@ class Storage {
         lancamento: '30/03/2022',
         duracao: 300,
         streaming: true,
-        imgLink: '/images/cavaleiro-da-lua.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/cavaleiro-da-lua.webp'
       },
       {
         id: 58,
@@ -675,7 +675,7 @@ class Storage {
         lancamento: '10/11/2022',
         duracao: 161,
         streaming: true,
-        imgLink: '/images/pantera-negra-wakanda-para-sempre.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/pantera-negra-wakanda-para-sempre.webp'
       },
       {
         id: 59,
@@ -686,7 +686,7 @@ class Storage {
         lancamento: '24/06/2025',
         duracao: 360,
         streaming: false,
-        imgLink: '/images/coracao-de-ferro.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/coracao-de-ferro.webp'
       },
       {
         id: 60,
@@ -697,7 +697,7 @@ class Storage {
         lancamento: '18/08/2022',
         duracao: 270,
         streaming: true,
-        imgLink: '/images/she-hulk.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/she-hulk.webp'
       },
       {
         id: 61,
@@ -708,7 +708,7 @@ class Storage {
         lancamento: '08/06/2022',
         duracao: 282,
         streaming: true,
-        imgLink: '/images/ms-marvel.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/ms-marvel.webp'
       },
       {
         id: 62,
@@ -719,7 +719,7 @@ class Storage {
         lancamento: '07/07/2022',
         duracao: 119,
         streaming: true,
-        imgLink: '/images/thor-amor-e-trovao.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/thor-amor-e-trovao.webp'
       },
       {
         id: 63,
@@ -730,7 +730,7 @@ class Storage {
         lancamento: '07/10/2022',
         duracao: 52,
         streaming: true,
-        imgLink: '/images/lobisomem-na-noite.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/lobisomem-na-noite.webp'
       },
       {
         id: 64,
@@ -741,7 +741,7 @@ class Storage {
         lancamento: '25/11/2022',
         duracao: 42,
         streaming: true,
-        imgLink: '/images/os-guardioes-da-galaxia-especial-de-natal.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/os-guardioes-da-galaxia-especial-de-natal.webp'
       },
       {
         id: 65,
@@ -752,7 +752,7 @@ class Storage {
         lancamento: '16/02/2023',
         duracao: 124,
         streaming: true,
-        imgLink: '/images/homem-formiga-e-a-vespa-quantumania.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/homem-formiga-e-a-vespa-quantumania.webp'
       },
       {
         id: 66,
@@ -763,7 +763,7 @@ class Storage {
         lancamento: '04/05/2023',
         duracao: 150,
         streaming: true,
-        imgLink: '/images/os-guardioes-da-galaxia-vol-3.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/os-guardioes-da-galaxia-vol-3.webp'
       },
       {
         id: 67,
@@ -774,7 +774,7 @@ class Storage {
         lancamento: '21/06/2023',
         duracao: 270,
         streaming: true,
-        imgLink: '/images/invasao-secreta.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/invasao-secreta.webp'
       },
       {
         id: 68,
@@ -785,7 +785,7 @@ class Storage {
         lancamento: '09/11/2023',
         duracao: 105,
         streaming: true,
-        imgLink: '/images/as-marvels.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/as-marvels.webp'
       },
       {
         id: 69,
@@ -796,7 +796,7 @@ class Storage {
         lancamento: '25/07/2024',
         duracao: 127,
         streaming: false,
-        imgLink: '/images/deadpool-wolverine.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/deadpool-wolverine.webp'
       },
       {
         id: 70,
@@ -807,7 +807,7 @@ class Storage {
         lancamento: '18/09/2024',
         duracao: 270,
         streaming: false,
-        imgLink: '/images/agatha-desde-sempre.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/agatha-desde-sempre.webp'
       },
       {
         id: 71,
@@ -818,7 +818,7 @@ class Storage {
         lancamento: '14/02/2025',
         duracao: 130,
         streaming: false,
-        imgLink: '/images/capitao-america-admiravel-mundo-novo.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/capitao-america-admiravel-mundo-novo.webp'
       },
       {
         id: 72,
@@ -829,7 +829,7 @@ class Storage {
         lancamento: '04/03/2025',
         duracao: 360,
         streaming: false,
-        imgLink: '/images/demolidor-renascido.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/demolidor-renascido.webp'
       },
       {
         id: 73,
@@ -840,7 +840,7 @@ class Storage {
         lancamento: '02/05/2025',
         duracao: 125,
         streaming: false,
-        imgLink: '/images/thunderbolts.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/thunderbolts.webp'
       }
     ];
 
