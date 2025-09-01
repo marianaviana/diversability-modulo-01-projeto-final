@@ -170,9 +170,12 @@ class UI {
     return `
     <section class="page principal active">
       <div class="section-container">
-        <h2 class="section-title">Catálogo Marvel (MCU)</h2>
+        <h2 class="section-title">Estatísticas</h2>
+        <div id="statistics" class="stats-grid"></div>
+      </div>
 
-        <!-- Seção de Filtros -->
+      <div class="section-container">
+        <h2 class="section-title">Catálogo Marvel (MCU)</h2>
         <div class="filters-section">
           <div class="filters-header">
             <h3 class="filters-title">Filtros</h3>
@@ -204,10 +207,6 @@ class UI {
           <button id="search-btn" class="btn btn-primary">Buscar</button>
         </div>
         <div id="movie-cards" class="cards-grid"></div>
-      </div>
-      <div class="section-container">
-        <h2 class="section-title">Estatísticas</h2>
-        <div id="statistics" class="stats-grid"></div>
       </div>
     </section>
   `;
