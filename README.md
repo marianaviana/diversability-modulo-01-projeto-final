@@ -2,13 +2,16 @@
 
 [![Catálogo Marvel (MCU) Workflow](https://github.com/marianaviana/daily/actions/workflows/daily-commit.yml/badge.svg)](https://github.com/marianaviana/daily/actions/workflows/diversability-modulo-01-projeto-final.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-- [PREVIEW](https://mariviana.dev/diversability-modulo-01-projeto-final/)
 
 Este projeto foi desenvolvido como parte das atividades da disciplina da trilha de Front-end Javascript no Módulo 01 (Nivelamento de Lógica de Programação e OO) do programa DiversAbility.
 
 O objetivo é concluir o desafio do professor e demonstrar o domínio das habilidades apresentadas.
 
 Um sistema completo para gerenciamento de catálogo de filmes e séries do Universo Cinematográfico Marvel, desenvolvido com HTML, CSS e JavaScript puro seguindo princípios de Clean Code e Programação Orientada a Objetos.
+
+<img width="874" height="504" alt="image" src="https://github.com/user-attachments/assets/e4ba7e95-b061-4535-8ea2-06830642e1e6" />
+
+### [Preview do projeto](https://mariviana.dev/diversability-modulo-01-projeto-final/) 👀
 
 ## ✨ Funcionalidades
 
@@ -156,3 +159,7 @@ Para dúvidas ou problemas:
 ______________________
 
 > **Nota:** Este projeto foi desenvolvido para fins educacionais como parte do programa DiversAbility da Ada Tech em parceria com a Cognizant.
+
+______________________
+<img alt="image" src="https://github.com/user-attachments/assets/19ddebe0-8700-4e99-a110-b5f8d8308c7b" />
+
