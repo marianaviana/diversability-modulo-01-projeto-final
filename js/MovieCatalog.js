@@ -149,4 +149,93 @@ class MovieCatalog {
     const total = this.movies.reduce((sum, movie) => sum + movie.avaliacao, 0);
     return total / this.movies.length;
   }
+
+  filterByRating(minRating) {
+    return this.movies.filter(movie => movie.avaliacao > minRating);
+  }
+
+  filterByStreaming(streaming) {
+    return this.movies.filter(movie => movie.streaming === streaming);
+  }
+
+  filterByType(tipo) {
+    return this.movies.filter(movie => movie.tipo === tipo);
+  }
+
+  sortByRating(order = 'desc') {
+    return [...this.movies].sort((a, b) => {
+      return order === 'desc' ? b.avaliacao - a.avaliacao : a.avaliacao - b.avaliacao;
+    });
+  }
+
+  sortByReleaseDate(order = 'desc') {
+    return [...this.movies].sort((a, b) => {
+      const dateA = this.parseDate(a.lancamento);
+      const dateB = this.parseDate(b.lancamento);
+      return order === 'desc' ? dateB - dateA : dateA - dateB;
+    });
+  }
+
+  parseDate(dateString) {
+    const parts = dateString.split('/');
+    return new Date(parts[2], parts[1] - 1, parts[0]);
+  }
+
+  applyFilters(filters = {}) {
+    console.log('Aplicando filtros:', filters);
+
+    let filteredMovies = [...this.movies];
+
+    if (filters.rating) {
+      filteredMovies = filteredMovies.filter(movie => movie.avaliacao > 6);
+    }
+
+    if (filters.streaming) {
+      filteredMovies = filteredMovies.filter(movie => movie.streaming === true);
+    }
+
+    if (filters.tipos && filters.tipos.length > 0) {
+      filteredMovies = filteredMovies.filter(movie => filters.tipos.includes(movie.tipo));
+    }
+
+    const sortBy = filters.sortBy || 'mais-recentes';
+    console.log('Ordenando por:', sortBy);
+
+    switch (sortBy) {
+      case 'maior-nota':
+        filteredMovies.sort((a, b) => b.avaliacao - a.avaliacao);
+        break;
+      case 'menor-nota':
+        filteredMovies.sort((a, b) => a.avaliacao - b.avaliacao);
+        break;
+      case 'data-lancamento':
+        filteredMovies.sort((a, b) => {
+          const dateA = this.parseDate(a.lancamento);
+          const dateB = this.parseDate(b.lancamento);
+          return dateA - dateB;
+        });
+        break;
+      case 'mais-recentes':
+      default:
+        filteredMovies.sort((a, b) => {
+          const dateA = this.parseDate(a.lancamento);
+          const dateB = this.parseDate(b.lancamento);
+          return dateB - dateA;
+        });
+        break;
+    }
+
+    console.log('Resultados após filtros:', filteredMovies.length);
+    return filteredMovies;
+  }
+
+  parseDate(dateString) {
+    try {
+      const parts = dateString.split('/');
+      return new Date(parts[2], parts[1] - 1, parts[0]);
+    } catch (error) {
+      console.error('Erro ao parsear data:', dateString, error);
+      return new Date(0);
+    }
+  }
 }

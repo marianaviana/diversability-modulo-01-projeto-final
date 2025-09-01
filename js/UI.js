@@ -3,6 +3,13 @@ class UI {
     this.movieCatalog = movieCatalog;
     this.currentPage = 'principal';
     this.editingMovieId = null;
+
+    this.filters = {
+      rating: false,
+      streaming: false,
+      tipos: [], // 'Filme', 'Serie'
+      sortBy: 'mais-recentes'
+    };
   }
 
   isValidImageUrl(url) {
@@ -12,7 +19,7 @@ class UI {
 
     return (
       cleanUrl === 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/marvel.png' ||
-      cleanUrl.startsWith('/images/') ||
+      cleanUrl.startsWith('https://mariviana.dev/diversability-modulo-01-projeto-final/images/') ||
       cleanUrl.startsWith('http://') ||
       cleanUrl.startsWith('https://') ||
       cleanUrl.startsWith('data:image/') ||
@@ -29,24 +36,57 @@ class UI {
     this.renderFooter();
     this.showPage('principal');
     this.setupEventListeners();
+
+    // Aplica os filtros padrão inicialmente
+    setTimeout(() => {
+      this.applyFilters();
+    }, 100);
   }
 
   loadAllImages() {
     setTimeout(() => {
       const images = document.querySelectorAll('img.card-img');
       images.forEach(img => {
-        if (img.src && img.src !== 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/marvel.png' && !img.complete) {
-          const newImg = new Image();
-          newImg.onload = function() {
-            img.src = this.src;
-          };
-          newImg.onerror = function() {
-            img.src = 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/marvel.png';
-          };
-          newImg.src = img.src;
+        // Verificar se a imagem já carregou corretamente
+        if (img.complete && img.naturalHeight !== 0) {
+          return;
+        }
+
+        // Só forçar recarregamento se for uma URL válida e não for o fallback
+        const isFallback = img.src.includes('marvel.png');
+        const isValidUrl = this.isValidImageUrl(img.src);
+
+        if (img.src && !isFallback && isValidUrl) {
+          // Técnica mais suave de recarregamento
+          const originalSrc = img.src;
+
+          // Apenas recarrega se realmente necessário
+          setTimeout(() => {
+            if (!img.complete || img.naturalHeight === 0) {
+              img.src = originalSrc + '?t=' + new Date().getTime(); // Cache bust
+            }
+          }, 100);
         }
       });
-    }, 100);
+    }, 300);
+  }
+
+  forceImageLoad() {
+    const images = document.querySelectorAll('img.card-img');
+    images.forEach(img => {
+      if (img.src && img.src !== 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/marvel.png') {
+        const originalSrc = img.src;
+        img.style.opacity = '0.5';
+
+        setTimeout(() => {
+          img.src = '';
+          setTimeout(() => {
+            img.src = originalSrc;
+            img.style.opacity = '1';
+          }, 50);
+        }, 100);
+      }
+    });
   }
 
   renderHeader() {
@@ -128,21 +168,94 @@ class UI {
 
   getPrincipalPageHTML() {
     return `
-      <section class="page principal active">
-        <div class="section-container">
-          <h2 class="section-title">Estatísticas</h2>
-          <div id="statistics" class="stats-grid"></div>
-        </div>
-        <div class="section-container">
-          <h2 class="section-title">Catálogo Marvel (MCU)</h2>
-          <div class="search-box">
-            <input type="text" id="search-input" class="form-control" placeholder="Buscar por título...">
-            <button id="search-btn" class="btn btn-primary">Buscar</button>
+    <section class="page principal active">
+      <div class="section-container">
+        <h2 class="section-title">Catálogo Marvel (MCU)</h2>
+
+        <!-- Seção de Filtros -->
+        <div class="filters-section">
+          <div class="filters-header">
+            <h3 class="filters-title">Filtros</h3>
           </div>
-          <div id="movie-cards" class="cards-grid"></div>
+
+          <div class="filters-grid">
+            <div class="filter-group">
+              <label for="sort-order">Ordenar por:</label>
+              <select id="sort-order" class="filter-select">
+                <option value="mais-recentes">Mais recentes</option>
+                <option value="data-lancamento">Data de lançamento</option>
+                <option value="maior-nota">Maior nota</option>
+                <option value="menor-nota">Menor nota</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="filter-buttons">
+            <button class="filter-btn" data-filter="rating">Avaliação > 6</button>
+            <button class="filter-btn" data-filter="streaming">Disponível em Streaming</button>
+            <button class="filter-btn" data-filter="filme">Filmes</button>
+            <button class="filter-btn" data-filter="serie">Séries</button>
+            <button class="filter-btn clear" data-filter="clear">Limpar Filtros</button>
+          </div>
         </div>
-      </section>
-    `;
+
+        <div class="search-box">
+          <input type="text" id="search-input" class="form-control" placeholder="Buscar por título...">
+          <button id="search-btn" class="btn btn-primary">Buscar</button>
+        </div>
+        <div id="movie-cards" class="cards-grid"></div>
+      </div>
+      <div class="section-container">
+        <h2 class="section-title">Estatísticas</h2>
+        <div id="statistics" class="stats-grid"></div>
+      </div>
+    </section>
+  `;
+  }
+
+  applyFilters() {
+    const filteredMovies = this.movieCatalog.applyFilters(this.filters);
+    this.renderMovieCards(filteredMovies);
+    this.updateFilterButtons();
+  }
+
+  updateFilterButtons() {
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.classList.remove('active');
+    });
+
+    if (this.filters.rating) {
+      document.querySelector('[data-filter="rating"]').classList.add('active');
+    }
+    if (this.filters.streaming) {
+      document.querySelector('[data-filter="streaming"]').classList.add('active');
+    }
+    if (this.filters.tipos.includes('Filme')) {
+      document.querySelector('[data-filter="filme"]').classList.add('active');
+    }
+    if (this.filters.tipos.includes('Serie')) {
+      document.querySelector('[data-filter="serie"]').classList.add('active');
+    }
+
+    const sortSelect = document.getElementById('sort-order');
+    if (sortSelect) {
+      sortSelect.value = this.filters.sortBy;
+    }
+  }
+
+  clearFilters() {
+    this.filters = {
+      rating: false,
+      streaming: false,
+      tipos: [],
+      sortBy: 'mais-recentes'
+    };
+    this.applyFilters();
+
+    const sortSelect = document.getElementById('sort-order');
+    if (sortSelect) {
+      sortSelect.value = 'mais-recentes';
+    }
   }
 
   getCadastrarPageHTML() {
@@ -215,7 +328,7 @@ class UI {
                 <input type="text" id="update-title" class="form-control" required>
               </div>
               <div class="form-group">
-                <label for="update-tipo">Tipo*</label>
+                <label for 'update-tipo">Tipo*</label>
                 <select id="update-tipo" class="form-control" required>
                   <option value="">Selecione...</option>
                   <option value="Filme">Filme</option>
@@ -295,88 +408,97 @@ class UI {
     `;
   }
 
-  renderMovieCards(movies = null) {
-    const container = document.getElementById('movie-cards');
-    if (!container) return;
+renderMovieCards(movies = null) {
+  const container = document.getElementById('movie-cards');
+  if (!container) return;
 
-    const moviesToRender = movies || this.movieCatalog.movies;
+  const moviesToRender = movies || this.movieCatalog.applyFilters(this.filters);
 
-    console.log('Renderizando cards, total de filmes:', moviesToRender.length);
-    moviesToRender.forEach(movie => {
-      console.log('Filme:', movie.title, 'ImgLink:', movie.imgLink, 'Válida:', this.isValidImageUrl(movie.imgLink));
-    });
-
-    if (moviesToRender.length === 0) {
-      container.innerHTML = '<p>Nenhum filme/série encontrado.</p>';
-      return;
-    }
-
-    container.innerHTML = moviesToRender.map(movie => {
-      const imageUrl = this.isValidImageUrl(movie.imgLink) ? movie.imgLink : 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/marvel.png';
-
-      return `
-      <div class="movie-card" data-id="${movie.id}">
-        <div class="card-body-img">
-          <img src="${imageUrl}"
-            alt="${movie.title}"
-            class="card-img"
-            onerror="this.src='https://mariviana.dev/diversability-modulo-01-projeto-final/images/marvel.png'"
-          />
-        </div>
-        <div class="card-body">
-          <h3 class="card-title">${movie.title}</h3>
-          <p class="card-text"><strong>Tipo:</strong> ${movie.tipo}</p>
-          <p class="card-text"><strong>${movie.diretores[0].includes(',') ? 'Diretores(as)' : 'Diretor(a)'}:</strong> ${movie.diretores.join(', ')}</p>
-          <p class="card-text"><strong>Lançamento:</strong> ${movie.lancamento}</p>
-          <p class="card-text"><strong>Duração:</strong> ${movie.duracao} minutos</p>
-          <p class="card-text"><strong>Streaming:</strong> ${movie.streaming ? 'Disponível' : 'Indisponível'}</p>
-          <p class="card-text rating"><strong>Avaliação IMDb:</strong> ${this.renderStars(movie.avaliacao)} (${movie.avaliacao.toFixed(1)}/10)</p>
-          <div class="card-actions">
-            <button class="btn btn-warning edit-btn" data-id="${movie.id}">Editar</button>
-            <button class="btn btn-danger delete-btn" data-id="${movie.id}">Excluir</button>
-          </div>
-        </div>
-      </div>
-      `;
-    }).join('');
-
-    this.attachCardEventListeners();
+  if (moviesToRender.length === 0) {
+    container.innerHTML = '<p class="no-results">Nenhum filme/série encontrado com os filtros aplicados.</p>';
+    return;
   }
 
-  renderSearchResults(page) {
-    const container = page === 'atualizar'
-      ? document.getElementById('update-results')
-      : document.getElementById('delete-results');
+  container.innerHTML = moviesToRender.map(movie => {
+    let imageUrl = movie.imgLink;
 
-    if (!container) return;
-
-    const searchInput = page === 'atualizar'
-      ? document.getElementById('update-search-input')
-      : document.getElementById('delete-search-input');
-
-    const query = searchInput ? searchInput.value : '';
-    const results = this.movieCatalog.searchMovies(query);
-
-    if (results.length === 0) {
-      container.innerHTML = '<p>Nenhum resultado encontrado.</p>';
-      return;
+    if (imageUrl && imageUrl.startsWith('/images/')) {
+      imageUrl = `https://mariviana.dev/diversability-modulo-01-projeto-final${imageUrl}`;
     }
 
-    container.innerHTML = `
-      <h3>Resultados da Busca:</h3>
-      <div class="cards-grid">
-        ${results.map(movie => {
-          const hasValidImage = movie.imgLink &&
-                              (movie.imgLink.startsWith('http') ||
-                                movie.imgLink.startsWith('https://mariviana.dev/diversability-modulo-01-projeto-final/images/') ||
-                                movie.imgLink.startsWith('data:image'));
+    const finalImageUrl = this.isValidImageUrl(imageUrl)
+      ? imageUrl
+      : 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/marvel.png';
 
-          const imageUrl = hasValidImage ? movie.imgLink : 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/marvel.png';
+    return `
+    <div class="movie-card" data-id="${movie.id}">
+      <div class="card-body-img">
+        <img src="${finalImageUrl}"
+          alt="${movie.title}"
+          class="card-img"
+          onerror="this.src='https://mariviana.dev/diversability-modulo-01-projeto-final/images/marvel.png'"
+        />
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">${movie.title}</h3>
+        <p class="card-text"><strong>Tipo:</strong> ${movie.tipo}</p>
+        <p class="card-text"><strong>Diretor(es):</strong> ${movie.diretores.join(', ')}</p>
+        <p class="card-text"><strong>Lançamento:</strong> ${movie.lancamento}</p>
+        <p class="card-text"><strong>Duração:</strong> ${movie.duracao} minutos</p>
+        <p class="card-text"><strong>Streaming:</strong> ${movie.streaming ? 'Disponível' : 'Indisponível'}</p>
+        <p class="card-text rating"><strong>Avaliação:</strong> ${this.renderStars(movie.avaliacao)} (${movie.avaliacao.toFixed(1)})</p>
+        <div class="card-actions">
+          <button class="btn btn-warning edit-btn" data-id="${movie.id}">Editar</button>
+          <button class="btn btn-danger delete-btn" data-id="${movie.id}">Excluir</button>
+        </div>
+      </div>
+    </div>
+    `;
+  }).join('');
 
-          return `
+  this.attachCardEventListeners();
+
+  setTimeout(() => {
+    this.loadAllImages();
+  }, 100);
+}
+
+renderSearchResults(page) {
+  const container = page === 'atualizar'
+    ? document.getElementById('update-results')
+    : document.getElementById('delete-results');
+
+  if (!container) return;
+
+  const searchInput = page === 'atualizar'
+    ? document.getElementById('update-search-input')
+    : document.getElementById('delete-search-input');
+
+  const query = searchInput ? searchInput.value : '';
+  const results = this.movieCatalog.searchMovies(query);
+
+  if (results.length === 0) {
+    container.innerHTML = '<p>Nenhum resultado encontrado.</p>';
+    return;
+  }
+
+  container.innerHTML = `
+    <h3>Resultados da Busca:</h3>
+    <div class="cards-grid">
+      ${results.map(movie => {
+        let imageUrl = movie.imgLink;
+
+        if (imageUrl && imageUrl.startsWith('/images/')) {
+          imageUrl = `https://mariviana.dev/diversability-modulo-01-projeto-final${imageUrl}`;
+        }
+
+        const hasValidImage = this.isValidImageUrl(imageUrl);
+        const finalImageUrl = hasValidImage ? imageUrl : 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/marvel.png';
+
+        return `
           <div class="movie-card">
             <div class="card-body-img">
-              <img src="${imageUrl}"
+              <img src="${finalImageUrl}"
                 alt="${movie.title}"
                 class="card-img"
                 onerror="this.src='https://mariviana.dev/diversability-modulo-01-projeto-final/images/marvel.png'"
@@ -396,27 +518,31 @@ class UI {
               }
             </div>
           </div>
-          `;
-        }).join('')}
-      </div>
-    `;
+        `;
+      }).join('')}
+    </div>
+  `;
 
-    if (page === 'atualizar') {
-      document.querySelectorAll('.select-update-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          const id = parseInt(e.target.dataset.id);
-          this.prepareUpdateForm(id);
-        });
+  setTimeout(() => {
+    this.loadAllImages();
+  }, 100);
+
+  if (page === 'atualizar') {
+    document.querySelectorAll('.select-update-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const id = parseInt(e.target.dataset.id);
+        this.prepareUpdateForm(id);
       });
-    } else {
-      document.querySelectorAll('.select-delete-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          const id = parseInt(e.target.dataset.id);
-          this.confirmDelete(id);
-        });
+    });
+  } else {
+    document.querySelectorAll('.select-delete-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const id = parseInt(e.target.dataset.id);
+        this.confirmDelete(id);
       });
-    }
+    });
   }
+}
 
   attachCardEventListeners() {
     document.querySelectorAll('.edit-btn').forEach(btn => {
@@ -607,14 +733,22 @@ class UI {
     }, 3000);
   }
 
-  showPage(page) {
-    this.currentPage = page;
-    this.renderHeader();
-    this.renderPageContent(page);
-    this.setupPageEventListeners(page);
-    // Forçar carregamento de imagens após a renderização
-    this.loadAllImages();
+showPage(page) {
+  this.currentPage = page;
+  this.renderHeader();
+  this.renderPageContent(page);
+  this.setupPageEventListeners(page);
+
+  if (page === 'principal') {
+    setTimeout(() => {
+      this.updateFilterButtons();
+    }, 100);
   }
+
+  setTimeout(() => {
+    this.loadAllImages();
+  }, 500);
+}
 
   setupEventListeners() {
     document.addEventListener('click', (e) => {
@@ -646,6 +780,7 @@ class UI {
   setupPrincipalPageListeners() {
     const searchBtn = document.getElementById('search-btn');
     const searchInput = document.getElementById('search-input');
+    const sortSelect = document.getElementById('sort-order');
 
     if (searchBtn && searchInput) {
       searchBtn.addEventListener('click', () => {
@@ -660,6 +795,49 @@ class UI {
         }
       });
     }
+
+    if (sortSelect) {
+      sortSelect.addEventListener('change', (e) => {
+        this.filters.sortBy = e.target.value;
+        this.applyFilters();
+      });
+    }
+
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const filterType = e.target.dataset.filter;
+
+        switch (filterType) {
+          case 'rating':
+            this.filters.rating = !this.filters.rating;
+            break;
+          case 'streaming':
+            this.filters.streaming = !this.filters.streaming;
+            break;
+          case 'filme':
+            const filmeIndex = this.filters.tipos.indexOf('Filme');
+            if (filmeIndex === -1) {
+              this.filters.tipos.push('Filme');
+            } else {
+              this.filters.tipos.splice(filmeIndex, 1);
+            }
+            break;
+          case 'serie':
+            const serieIndex = this.filters.tipos.indexOf('Serie');
+            if (serieIndex === -1) {
+              this.filters.tipos.push('Serie');
+            } else {
+              this.filters.tipos.splice(serieIndex, 1);
+            }
+            break;
+          case 'clear':
+            this.clearFilters();
+            return;
+        }
+
+        this.applyFilters();
+      });
+    });
   }
 
   setupCadastrarPageListeners() {
