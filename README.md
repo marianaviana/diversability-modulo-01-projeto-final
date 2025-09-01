@@ -26,8 +26,8 @@ Um sistema completo para gerenciamento de catálogo de filmes e séries do Unive
 
 1. **Clone o repositório**
    ```bash
-   git clone <url-do-repositorio>
-   cd mcu-catalog
+   git clone https://github.com/marianaviana/diversability-modulo-01-projeto-final
+   cd diversability-modulo-01-projeto-final
 
 2. Abra o projeto
 
