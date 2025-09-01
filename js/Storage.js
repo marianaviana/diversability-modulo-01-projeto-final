@@ -653,7 +653,7 @@ class Storage {
         lancamento: '09/01/2024',
         duracao: 270,
         streaming: true,
-        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/echo.webp'
+        imgLink: 'https://mariviana.dev/diversability-modulo-01-projeto-final/images/Echo.webp'
       },
       {
         id: 57,
